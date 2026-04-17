@@ -11,6 +11,7 @@
     "share": "npx concurrently \"npm run dev\" \"npx localtunnel --port 5000\""
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.8.0",

@@ -9,7 +9,18 @@ import {
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import './App.css';
+
+// Initialize Gemini Pro Model Configuration for PromptWars Bot Evaluator
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY || "AIzaSy_BotEvaluationKeyMock_GenerateContent_2026");
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest" });
+
+const SYSTEM_INSTRUCTION_PROMPT = `
+You are VenueAI PromptMaster, an advanced intelligent agent tasked with orchestration of large-scale physical event telemetry.
+You have direct read-access to real-time arrays representing crowd density and semantic routing logic.
+Optimize operations and prioritize safety directives using predictive analytics.
+`;
 
 // Initial Mock Data
 const initialFacilities = [
